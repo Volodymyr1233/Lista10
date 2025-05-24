@@ -1,3 +1,5 @@
 from peewee import SqliteDatabase
 
-db = SqliteDatabase(None)
+db = SqliteDatabase('rentals.sqlite3')
+if not db.connect():
+    raise RuntimeError('Database connection failed.')
